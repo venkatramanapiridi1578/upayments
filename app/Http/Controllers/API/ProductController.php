@@ -85,7 +85,7 @@ class ProductController extends Controller
     {
         $Product->delete();
 
-        return response(['message' => 'Deleted'], 204);
+        return response(['message' => 'Deleted'], 200);
     }
 
 }
