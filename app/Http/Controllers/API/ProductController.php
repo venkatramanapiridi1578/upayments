@@ -35,7 +35,7 @@ class ProductController extends Controller
 
         $Product = Product::create($data);
 
-        return response([ 'Product' => new ProductResource($Product), 'message' => 'Created successfully'], 201);
+        return response([ 'product' => new ProductResource($Product), 'message' => 'Created successfully'], 201);
     }
 
 
