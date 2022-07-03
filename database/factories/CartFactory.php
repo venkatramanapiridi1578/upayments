@@ -9,6 +9,7 @@ $factory->define(Cart::class, function (Faker $faker) {
     return [
         'session_id' => $faker->randomNumber(5, true),       
         'product_id' =>  $faker->randomDigitNotNull,
+        'user_id' =>  $faker->randomDigitNotNull,
         'qty' =>  $faker->randomDigitNotNull
     ];
 });

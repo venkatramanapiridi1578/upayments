@@ -59,7 +59,7 @@ class CartController extends Controller
     {
         $Products = Cart::all()->where('user_id',Auth::id());
 
-        return response([ 'Cart' => CartResource::collection($Products), 'message' => 'Retrieved successfully'], 200);
+        return response([ 'carts' => CartResource::collection($Products), 'message' => 'Retrieved successfully'], 200);
     }
     /**
      * Display the specified resource.
@@ -69,7 +69,7 @@ class CartController extends Controller
      */
     public function show(Cart $Cart)
     {
-        return response([ 'Cart' => new CartResource($Product), 'message' => 'Retrieved successfully'], 200);
+        return response([ 'cart' => new CartResource($Product), 'message' => 'Retrieved successfully'], 200);
 
     }
 
@@ -85,7 +85,7 @@ class CartController extends Controller
 
          $Cart->update($request->all());
 
-        return response([ 'Cart' => new CartResource($Cart), 'message' => 'Updated successfully'], 200);
+        return response([ 'cart' => new CartResource($Cart), 'message' => 'Updated successfully'], 200);
     }
 
     /**
