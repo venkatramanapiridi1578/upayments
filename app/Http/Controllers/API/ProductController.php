@@ -43,7 +43,7 @@ class ProductController extends Controller
     {
         $Products = Product::all();
 
-        return response([ 'Products' => ProductResource::collection($Products), 'message' => 'Retrieved successfully'], 200);
+        return response([ 'products' => ProductResource::collection($Products), 'message' => 'Retrieved successfully'], 200);
     }
     /**
      * Display the specified resource.
@@ -53,7 +53,7 @@ class ProductController extends Controller
      */
     public function show(Product $Product)
     {
-        return response([ 'Product' => new ProductResource($Product), 'message' => 'Retrieved successfully'], 200);
+        return response([ 'product' => new ProductResource($Product), 'message' => 'Retrieved successfully'], 200);
 
     }
 
@@ -69,7 +69,7 @@ class ProductController extends Controller
 
         $Product->update($request->all());
 
-        return response([ 'Product' => new ProductResource($Product), 'message' => 'Updated successfully'], 200);
+        return response([ 'product' => new ProductResource($Product), 'message' => 'Updated successfully'], 200);
     }
 
     /**
