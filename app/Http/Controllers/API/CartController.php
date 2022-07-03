@@ -38,7 +38,7 @@ class CartController extends Controller
         if($validator->fails()){
             return response(['error' => $validator->errors(), 'Validation Error']);
         }
-        $product = Product::findOrFail($data['product_id']);
+        //$product = Product::findOrFail($data['product_id']);
 
         if (Auth::check())
         {
@@ -51,7 +51,7 @@ class CartController extends Controller
 
         $Cart = Cart::create($data);
 
-        return response([ 'Cart' => new CartResource($Cart), 'message' => 'Item added successfully'], 201);
+        return response([ 'cart' => new CartResource($Cart), 'message' => 'Item added successfully'], 201);
     }
 
 
